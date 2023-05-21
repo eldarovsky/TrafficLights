@@ -18,21 +18,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="EK4-v7-K6o">
-                                <rect key="frame" x="104.5" y="64" width="205" height="778"/>
+                                <rect key="frame" x="135" y="64" width="144" height="778"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="dZB-xn-9rx">
-                                        <rect key="frame" x="0.0" y="0.0" width="205" height="661.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dZB-xn-9rx">
+                                        <rect key="frame" x="7" y="0.0" width="130" height="682"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Cb-Nk-9ku" userLabel="Red_Light">
-                                                <rect key="frame" x="0.0" y="0.0" width="205" height="205"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="Ykx-Gc-AxD"/>
                                                     <constraint firstAttribute="width" secondItem="0Cb-Nk-9ku" secondAttribute="height" multiplier="1:1" id="dDn-Xt-Jsn"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrC-T4-vJm" userLabel="Yellow_Light">
-                                                <rect key="frame" x="0.0" y="228" width="205" height="205.5"/>
+                                                <rect key="frame" x="0.0" y="276" width="130" height="130"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -40,7 +41,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTU-Bt-NG6" userLabel="Green_Light">
-                                                <rect key="frame" x="0.0" y="456.5" width="205" height="205"/>
+                                                <rect key="frame" x="0.0" y="552" width="130" height="130"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -54,10 +55,11 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZg-bl-zix">
-                                        <rect key="frame" x="0.0" y="709.5" width="205" height="68.5"/>
+                                        <rect key="frame" x="0.0" y="730" width="144" height="48"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" secondItem="RZg-bl-zix" secondAttribute="width" multiplier="2:6" id="VLZ-Sr-W73"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="F1x-3T-3yf"/>
+                                            <constraint firstAttribute="width" secondItem="RZg-bl-zix" secondAttribute="height" multiplier="12:4" id="YPi-qr-9iw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -66,21 +68,27 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressStartButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="97N-qB-5Jt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="RZg-bl-zix" firstAttribute="width" secondItem="dZB-xn-9rx" secondAttribute="width" id="875-Od-gTv"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="EK4-v7-K6o" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="Chi-vd-fJ4"/>
                             <constraint firstItem="EK4-v7-K6o" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="r72-yD-xtg"/>
                             <constraint firstItem="EK4-v7-K6o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="vIa-En-dZv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenLightView" destination="fTU-Bt-NG6" id="MOh-1c-9Km"/>
+                        <outlet property="redLightView" destination="0Cb-Nk-9ku" id="PfA-Nl-CrK"/>
+                        <outlet property="startButton" destination="RZg-bl-zix" id="QD4-I4-sYB"/>
+                        <outlet property="yellowLightView" destination="HrC-T4-vJm" id="KWu-3e-nef"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

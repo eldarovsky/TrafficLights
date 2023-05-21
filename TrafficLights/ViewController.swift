@@ -13,9 +13,11 @@ class ViewController: UIViewController {
     @IBOutlet var greenLightView: UIView!
     @IBOutlet var startButton: UIButton!
 
+    var colorStatus = "red"
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         redLightView.alpha = 0.3
         yellowLightView.alpha = 0.3
         greenLightView.alpha = 0.3
@@ -29,18 +31,19 @@ class ViewController: UIViewController {
     @IBAction func pressStartButton() {
         startButton.setTitle(startButton.titleLabel?.text == "START" ? "NEXT" : "NEXT", for: .normal)
 
-        if redLightView.alpha != 1 && yellowLightView.alpha != 1  && greenLightView.alpha != 1 {
+        switch colorStatus {
+        case "red":
+            greenLightView.alpha = 0.3
             redLightView.alpha = 1
-        } else if yellowLightView.alpha != 1  && greenLightView.alpha != 1 {
+            colorStatus = "yellow"
+        case "yellow":
             redLightView.alpha = 0.3
             yellowLightView.alpha = 1
-        } else if redLightView.alpha != 1 && greenLightView.alpha != 1 {
+            colorStatus = "green"
+        default:
             yellowLightView.alpha = 0.3
             greenLightView.alpha = 1
-        } else if redLightView.alpha != 1 && yellowLightView.alpha != 1 {
-            redLightView.alpha = 1
-            greenLightView.alpha = 0.3
+            colorStatus = "red"
         }
-
     }
 }

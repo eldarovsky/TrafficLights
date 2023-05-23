@@ -11,43 +11,56 @@ class ViewController: UIViewController {
     @IBOutlet var redLightView: UIView!
     @IBOutlet var yellowLightView: UIView!
     @IBOutlet var greenLightView: UIView!
+    
     @IBOutlet var startButton: UIButton!
 
-    //    private var colorStatus = "red"
-    private var colorStatus = 0
-
+    private var colorStatus = color.red
+    private let isOn: CGFloat = 1.0
+    private let isOff: CGFloat = 0.3
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redLightView.alpha = 0.3
-        yellowLightView.alpha = 0.3
-        greenLightView.alpha = 0.3
-
-        startButton.layer.cornerRadius = 20
+        redLightView.alpha = isOff
+        yellowLightView.alpha = isOff
+        greenLightView.alpha = isOff
     }
 
     override func viewDidLayoutSubviews() {
         redLightView.layer.cornerRadius = redLightView.layer.frame.width / 2
         yellowLightView.layer.cornerRadius = yellowLightView.layer.frame.width / 2
         greenLightView.layer.cornerRadius = greenLightView.layer.frame.width / 2
+
+        startButton.layer.cornerRadius = startButton.layer.frame.height / 2
+
     }
 
     @IBAction func pressStartButton() {
-        startButton.setTitle("NEXT", for: .normal)
-
-        if colorStatus == 0 {
-            greenLightView.alpha = 0.3
-            redLightView.alpha = 1
-            colorStatus = 1
-        } else if colorStatus == 1 {
-            redLightView.alpha = 0.3
-            yellowLightView.alpha = 1
-            colorStatus = 2
-        } else if colorStatus == 2 {
-            yellowLightView.alpha = 0.3
-            greenLightView.alpha = 1
-            colorStatus = 0
+        if startButton.currentTitle == "START" {
+            startButton.setTitle("NEXT", for: .normal)
         }
+
+        switch colorStatus {
+        case .red:
+            greenLightView.alpha = isOff
+            redLightView.alpha = isOn
+            colorStatus = .yellow
+        case .yellow:
+            redLightView.alpha = isOff
+            yellowLightView.alpha = isOn
+            colorStatus = .green
+        case .green:
+            yellowLightView.alpha = isOff
+            greenLightView.alpha = isOn
+            colorStatus = .red
+        }
+    }
+}
+
+extension ViewController {
+    enum color {
+        case red
+        case yellow
+        case green
     }
 }

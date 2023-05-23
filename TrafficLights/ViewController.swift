@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet var greenLightView: UIView!
     @IBOutlet var startButton: UIButton!
 
-    var colorStatus = "red"
+    //    private var colorStatus = "red"
+    private var colorStatus = 0
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,28 +24,30 @@ class ViewController: UIViewController {
         yellowLightView.alpha = 0.3
         greenLightView.alpha = 0.3
 
-        redLightView.layer.cornerRadius = 65
-        yellowLightView.layer.cornerRadius = 65
-        greenLightView.layer.cornerRadius = 65
         startButton.layer.cornerRadius = 20
     }
 
-    @IBAction func pressStartButton() {
-        startButton.setTitle(startButton.titleLabel?.text == "START" ? "NEXT" : "NEXT", for: .normal)
+    override func viewDidLayoutSubviews() {
+        redLightView.layer.cornerRadius = redLightView.layer.frame.width / 2
+        yellowLightView.layer.cornerRadius = yellowLightView.layer.frame.width / 2
+        greenLightView.layer.cornerRadius = greenLightView.layer.frame.width / 2
+    }
 
-        switch colorStatus {
-        case "red":
+    @IBAction func pressStartButton() {
+        startButton.setTitle("NEXT", for: .normal)
+
+        if colorStatus == 0 {
             greenLightView.alpha = 0.3
             redLightView.alpha = 1
-            colorStatus = "yellow"
-        case "yellow":
+            colorStatus = 1
+        } else if colorStatus == 1 {
             redLightView.alpha = 0.3
             yellowLightView.alpha = 1
-            colorStatus = "green"
-        default:
+            colorStatus = 2
+        } else if colorStatus == 2 {
             yellowLightView.alpha = 0.3
             greenLightView.alpha = 1
-            colorStatus = "red"
+            colorStatus = 0
         }
     }
 }

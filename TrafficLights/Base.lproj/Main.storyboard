@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -14,26 +14,25 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficLights" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="EK4-v7-K6o">
-                                <rect key="frame" x="135" y="64" width="144" height="778"/>
+                                <rect key="frame" x="93" y="36" width="134" height="512"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dZB-xn-9rx">
-                                        <rect key="frame" x="7" y="0.0" width="130" height="682"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dZB-xn-9rx">
+                                        <rect key="frame" x="0.0" y="0.0" width="134" height="432.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Cb-Nk-9ku" userLabel="Red_Light">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="134" height="133.5"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="Ykx-Gc-AxD"/>
                                                     <constraint firstAttribute="width" secondItem="0Cb-Nk-9ku" secondAttribute="height" multiplier="1:1" id="dDn-Xt-Jsn"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrC-T4-vJm" userLabel="Yellow_Light">
-                                                <rect key="frame" x="0.0" y="276" width="130" height="130"/>
+                                                <rect key="frame" x="0.0" y="149.5" width="134" height="133.5"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -41,7 +40,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTU-Bt-NG6" userLabel="Green_Light">
-                                                <rect key="frame" x="0.0" y="552" width="130" height="130"/>
+                                                <rect key="frame" x="0.0" y="299" width="134" height="133.5"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -55,7 +54,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZg-bl-zix">
-                                        <rect key="frame" x="0.0" y="730" width="144" height="48"/>
+                                        <rect key="frame" x="20" y="480.5" width="94" height="31.5"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="F1x-3T-3yf"/>

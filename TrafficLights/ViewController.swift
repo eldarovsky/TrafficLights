@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var startButton: UIButton!
 
-    private var colorStatus = color.red
+    private var colorStatus = Color.red
     private let isOn: CGFloat = 1.0
     private let isOff: CGFloat = 0.3
 
@@ -32,7 +32,6 @@ class ViewController: UIViewController {
         greenLightView.layer.cornerRadius = greenLightView.layer.frame.width / 2
 
         startButton.layer.cornerRadius = startButton.layer.frame.height / 2
-
     }
 
     @IBAction func pressStartButton() {
@@ -58,7 +57,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController {
-    enum color {
+    enum Color {
         case red
         case yellow
         case green
